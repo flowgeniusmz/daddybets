@@ -1,0 +1,4 @@
+fileobject
+FileObject(id='file-1p6oLbkr6vvxYwA1q04nKFIF', bytes=28849, created_at=1709916641, filename='dk_teamlist.csv', object='file', purpose='assistants', status='processed', status_details=None)
+FileObject(id='file-fWKhc54bIJwagrCFEQr6eVxD', bytes=10148, created_at=1709916712, filename='dk_regionlist.csv', object='file', purpose='assistants', status='processed', status_details=None)
+FileObject(id='file-wj22GyTD1kWA24FUVQ4eMRbD', bytes=3008, created_at=1709916733, filename='dk_sportlist.csv', object='file', purpose='assistants', status='processed', status_details=None)

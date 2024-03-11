@@ -60,4 +60,10 @@ def create_dataframe_oai_assistanttools():
         tool_data = f.retrieve_oai_assistant_tools(varTool=varTool)
         df_oai_assistanttools = df_oai_assistanttools._append(tool_data, ignore_index=True)
     return df_oai_assistanttools
+
+@st.cache_data
+def create_dataframe_added_oai_file_list():
+    path = st.secrets.streamlit.added_oai_file_list_path
+    df = pd.read_csv(filepath_or_buffer=path)
+    return df
         

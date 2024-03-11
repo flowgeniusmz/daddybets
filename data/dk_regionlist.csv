@@ -1,4 +1,4 @@
-﻿regionCode,countryCode,typeCode,URLValue,isoRegionCode,name,FullValue,secretskey,jsonobject
+regionCode,countryCode,typeCode,URLValue,isoRegionCode,name,FullValue,secretskey,jsonobject
 AL,US,SB,US-AL-SB,US-AL,Alabama,"AL = ""US-AL-SB""",region_list_AL,"{'countryCode': 'US', 'regionCode': 'AL', 'isoRegionCode': 'US-AL', 'name': 'Alabama'}"
 AK,US,SB,US-AK-SB,US-AK,Alaska,"AK = ""US-AK-SB""",region_list_AK,"{'countryCode': 'US', 'regionCode': 'AK', 'isoRegionCode': 'US-AK', 'name': 'Alaska'}"
 AS,US,SB,US-AS-SB,US-AS,American Samoa,"AS = ""US-AS-SB""",region_list_AS,"{'countryCode': 'US', 'regionCode': 'AS', 'isoRegionCode': 'US-AS', 'name': 'American Samoa'}"

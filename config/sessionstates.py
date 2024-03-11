@@ -12,6 +12,10 @@ from status.chatstatus import initialize_status
 def get_initial_session_states():
     if "initalized" not in st.session_state:
         st.session_state.initialized = True
+    if "authenticated" not in st.session_state:
+        st.session_state.authenticated = False
+    if "acknowledged" not in st.session_state:
+        st.session_state.acknowledged = False
     if "session_id" not in st.session_state:
         st.session_state.session_id = str(uuid.uuid4())
     if "start_datetime" not in st.session_state:
@@ -72,8 +76,7 @@ def get_initial_session_states():
         st.session_state.new_row_tools = {"Type": None}
     if "input_object" not in st.session_state:
         st.session_state.input_object = {"Sport": None, "BetTypes": None, "UserPrompt": None, "AdditionalInstructions": None, "Hometeam": None, "Awayteam": None, "Homeinjury": None, "Awayinjury": None, "Weather": None}
-    if "authenticated" not in st.session_state:
-        st.session_state.authenticated = False
+
     if "betting_sport" not in st.session_state:
         st.session_state.betting_sport = None
     if "betting_region" not in st.session_state:
@@ -88,6 +91,8 @@ def get_initial_session_states():
         st.session_state.dataframe_dk_regions = dfCreate.get_dataframe_dk_regions()
     if "dataframe_dk_teams" not in st.session_state:
         st.session_state.dataframe_dk_teams = dfCreate.get_dataframe_dk_teams()
+    if "dataframe_added_oia_file_list" not in st.session_state:
+        st.session_state.dataframe_added_oia_file_list = dfCreate.create_dataframe_added_oai_file_list()
     if "betting_form_expander_state" not in st.session_state:
         st.session_state.betting_form_expander_state = True
     if "weather_status" not in st.session_state:   
@@ -96,6 +101,10 @@ def get_initial_session_states():
         st.session_state.odds_status = initialize_status("odds")
     if "unknown_status" not in st.session_state:
         st.session_state.unknown_status = initialize_status("unknown")
+    if "user_accepted_terms" not in st.session_state:
+        st.session_state.user_accepted_terms = False
+        st.session_state.user_accepted_terms_date = None
+        st.session_state.user_accepted_terms_checkbox = False
 
 
 #### INDIVIDUAL SESSION STATE FUNCTIONS
@@ -126,7 +135,9 @@ def get_session_states_dataframes():
         st.session_state.dataframe_tools = dfCreate.create_dataframe_oai_assistanttools()
     if "dataframe_messages" not in st.session_state:
         st.session_state.dataframe_messages = pd.DataFrame(columns=["Role", "Content", "Thread Id", "Message Id", "Run Id", "Session Id", "Created At Unix", "Created At Datetime"])
-
+    if "dataframe_added_oia_file_list" not in st.session_state:
+        st.session_state.dataframe_added_oia_file_list = dfCreate.create_dataframe_added_oai_file_list()
+        
 def get_session_states_session():
 
     if "initalized" not in st.session_state:
@@ -165,6 +176,11 @@ def get_session_state_betting_form():
         st.session_state.betting_date = None
     if "betting_prompt" not in st.session_state:
         st.session_state.betting_prompt = None
+
+def get_session_state_terms_form():
+    if "user_accepted_terms" not in st.session_state:
+        st.session_state.user_accepted_terms = False
+        st.session_state.user_accepted_terms_date = None
 
 #### SESSION STATE CHECK AND MASTER
 
