@@ -1,2 +1,2 @@
-index,username,credential,email,user_subscribed,date_created
+index,username,credential,email,user_subscribed,user_date_created, user_last_activity_date, user_betting_region, user_accepted_terms, user_accepted_terms_date
 0,mpzozulia@gmail.com,EverlyQuinn#7665,,,
