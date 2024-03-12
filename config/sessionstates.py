@@ -78,9 +78,11 @@ def get_initial_session_states():
         st.session_state.new_row_tools = {"Type": None}
     if "input_object" not in st.session_state:
         st.session_state.input_object = {"Sport": None, "BetTypes": None, "UserPrompt": None, "AdditionalInstructions": None, "Hometeam": None, "Awayteam": None, "Homeinjury": None, "Awayinjury": None, "Weather": None}
-
     if "betting_sport" not in st.session_state:
         st.session_state.betting_sport = None
+        st.session_state.betting_sport_id = None
+        st.session_state.betting_sport_eventgroup = None
+        st.session_state.betting_object_sports = {"selectedsport": None, "eventgroupid": None, "sportid": None, "name": None}
     if "betting_region" not in st.session_state:
         st.session_state.betting_region = None
     if "betting_date" not in st.session_state:

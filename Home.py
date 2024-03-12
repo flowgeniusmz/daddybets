@@ -1,8 +1,11 @@
 import streamlit as st
+st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
+
 from config import pagesetup as ps, sessionstates as ss
 from form import form_wizard as fw
 
-ps.get_st_page_config()
+
+
 # 0. Set Master Page Config (see config/pagesetup.py)
 ps.master_page_config(0)
 

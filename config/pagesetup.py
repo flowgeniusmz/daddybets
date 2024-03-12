@@ -1,13 +1,7 @@
 import streamlit as st
 from streamlit_extras.stylable_container import stylable_container
 
-def get_st_page_config():
-    st.set_page_config(
-        page_title=st.secrets.streamlit.config_app_name,
-        page_icon=st.secrets.streamlit.config_app_icon,
-        layout=st.secrets.streamlit.config_app_layout,
-        initial_sidebar_state=st.secrets.streamlit.config_app_initial_sidebar
-        )
+
 # 0. IMAGES
 def display_background_image():
     # Set the Streamlit image for branding as the background with transparency
