@@ -4,7 +4,7 @@ from openai import OpenAI
 import pandas as pd
 from datetime import datetime
 import time
-from dataframes import dataframes_create as dfCreate
+from dataframes import dataframe_create as dfCreate
 from status.chatstatus import initialize_status
 
 ### ALL SESSION STATES 
@@ -105,10 +105,21 @@ def get_initial_session_states():
         st.session_state.user_accepted_terms = False
         st.session_state.user_accepted_terms_date = None
         st.session_state.user_accepted_terms_checkbox = False
+    if "wizard_current_step" not in st.session_state:
+        st.session_state.wizard_current_step = "about"
+    if "terms_accedpted" not in st.session_state:
+        st.session_state.terms_accepted = False
+    if "customer_status" not in st.session_state:
+        st.session_state.customer_status = None #'new or returning
 
 
 #### INDIVIDUAL SESSION STATE FUNCTIONS
-        
+def get_session_states_stripe():
+    if "terms_accedpted" not in st.session_state:
+        st.session_state.terms_accepted = False
+    if "customer_status" not in st.session_state:
+        st.session_state.customer_status = None #'new or returning
+
 def get_session_states_status():
     if "weather_status" not in st.session_state:   
         st.session_state.weather_status = initialize_status("weather")

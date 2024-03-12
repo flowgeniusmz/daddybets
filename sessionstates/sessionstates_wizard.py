@@ -9,3 +9,4 @@ def get_sessionstates_wizard():
         st.session_state.wizard_queued_file = 1
     if "display_master_wizard" not in st.session_state:
         st.session_state.display_master_wizard = True
+    
