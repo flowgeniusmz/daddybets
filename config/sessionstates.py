@@ -12,6 +12,8 @@ from status.chatstatus import initialize_status
 def get_initial_session_states():
     if "initalized" not in st.session_state:
         st.session_state.initialized = True
+    if "validated" not in st.session_state:
+        st.session_state.validated = False
     if "authenticated" not in st.session_state:
         st.session_state.authenticated = False
     if "acknowledged" not in st.session_state:
@@ -105,8 +107,10 @@ def get_initial_session_states():
         st.session_state.user_accepted_terms = False
         st.session_state.user_accepted_terms_date = None
         st.session_state.user_accepted_terms_checkbox = False
+    if "wizard_current_view" not in st.session_state:
+        st.session_state.wizard_current_view = "about"
     if "wizard_current_step" not in st.session_state:
-        st.session_state.wizard_current_step = "about"
+        st.session_state.wizard_current_step = 1
     if "terms_accedpted" not in st.session_state:
         st.session_state.terms_accepted = False
     if "customer_status" not in st.session_state:

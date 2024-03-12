@@ -41,5 +41,18 @@ def formfield_validation_auth(varUsername, varCredential, varButton):
     else:
         return False
     
-a = formfield_validation_auth("A", "B", "True")
-print(a)
+def update_auth_sessionstates(varUsername, varCredential):
+    st.session_state.authenticated = True
+    st.session_state.username = varUsername
+    st.session_state.credential = varCredential
+
+def update_terms_sessionstates(varAcknowledged):
+    st.session_state.acknowledged = varAcknowledged
+
+def update_validated_sessionstates():
+    ack = st.session_state.acknowledged
+    aut = st.session_state.authenticated
+    if ack and aut:
+        st.session_state.validated = True
+    else:
+        st.session_state.validated = False

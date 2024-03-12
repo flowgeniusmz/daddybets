@@ -5,18 +5,32 @@ def login_success(varMessage: str, varUsername: str):
     st.session_state.authenticated = True
     st.session_state.username = varUsername
 
+def get_success_message(varType):
+    success_icon = st.secrets.streamlit.message_icon_success
+    if varType == "new": 
+        success_message = st.secrets.streamlit.message_success_newuser
+    elif varType == "existing":
+        success_message = st.secrets.streamlit.message_success_existinguser
+    elif varType == "terms":
+        success_message = st.secrets.streamlit.message_success_terms
+    else:
+        success_message = st.secrets.streamlit.message_success_overall
+    display_success = st.success(body=success_message, icon=success_icon)
+
 def get_error_message(varType,varError):
+    error_icon = st.secrets.streamlit.message_icon_error
     if varType == "new":
         error_message = varError.message
     elif varType == "exist":
         error_message = varError
+    elif varType == "terms":
+        error_message = varError
     else:
         error_message = "unknown"    
-    error_icon = "⚠️"
     display_error = st.error(body=error_message, icon=error_icon)
 
 
-def get_terms_conditions():
+def get_terms_conditions_content():
     terms_conditions = """
 
 # Terms and Conditions for Daddy Bets
@@ -71,3 +85,16 @@ If you have any questions about these Terms, please contact us.
 """
 
     return terms_conditions
+
+
+def get_about_content():
+    about_content = """Welcome to **DaddyBets**!
+
+    ## Terms and Conditions:
+    - Please accept the terms and conditions
+    ## User Registration / Login
+    - If you are new to DaddyBets, please create your account and make a payment
+    - If you are an existing user, please authenticate
+
+"""
+    return about_content
