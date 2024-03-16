@@ -16,10 +16,10 @@ def set_form_step(varAction, varStep=None):
         st.session_state.wizard_current_step = varStep
 
 def wizard_form_header():
-    title_container = st.container(border=False, height=50)
+    title_container = st.container(border=False, height=25)
     with title_container:
         ps.set_gray_header('Welcome to DaddyBets!')
-    button_container = st.container(border=False, height=50)
+    button_container = st.container(border=False, height=25)
     with button_container:
         # determines button color which should be red when user is on that given step
         about_type = 'primary' if st.session_state.wizard_current_view =="about"  else 'secondary'
