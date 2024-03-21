@@ -61,6 +61,7 @@ streamlit-folium
 streamlit-lottie
 streamlit-mic-recorder
 streamlit-modal
+stripe
 supabase
 tabulate
 tavily-python
